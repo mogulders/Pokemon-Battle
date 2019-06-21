@@ -1,10 +1,16 @@
 
 public abstract class Pokemon {
-	int hp = 175;
+	int hp;
 	String type;
-	//may not need both booleans as they may opperate in exact same way remember to remove getters/setters with also may not need to set speed
+	boolean hasFainted;
 	boolean hasTypeAdvantage;
+	boolean goesFirst;
 	int move;
+	
+	Pokemon(String type, int hp){
+		this.type=type;
+		this.hp = hp;
+	}
 	
 	public void setMove(int mov) {
 		move = mov;
@@ -13,9 +19,9 @@ public abstract class Pokemon {
 		return move;
 	}
 	
-	public int getHealthPoints() {
+	/*public int getHealthPoints() {
 		return 175;
-	}
+	}*/
 	
 	public String getType() {
 		return type;
@@ -28,15 +34,23 @@ public abstract class Pokemon {
 		return hp;
 	}
 	
+	abstract public String toStringDuringBattle();
+	
 	public void setTypeAdvantage(boolean ty) {
 		hasTypeAdvantage = ty;
 	}
+	
+	public void goesFirst(boolean first) {
+		goesFirst=first;
+	}
+	
 	public boolean getTypeAdvantage() {
 		return hasTypeAdvantage;
 	}
 	
-	
-	
+	public void hasFainted(boolean faint) {
+		hasFainted=faint;
+	}
 	
 	public abstract void getMoves();
 	public abstract int move1();

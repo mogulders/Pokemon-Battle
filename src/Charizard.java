@@ -1,8 +1,13 @@
 
 public class Charizard extends Pokemon {
 	
+	Charizard() {
+		super("fire",120);
+		// TODO Auto-generated constructor stub
+	}
+
 	String type = "fire";
-	int hp = super.getHealthPoints();
+	int hp = getNewHP();
 	String ember = "Ember";
 	String flamethrower = "Flamethrower";
 	boolean hasTypeAdvantage = false;
@@ -31,6 +36,11 @@ public class Charizard extends Pokemon {
 	}
 	
 	public String toString() {
-		return "Charizard has " + hp + " hp, and is of type "+ type; 
+		return "Charizard, " + getNewHP() +" "+ type; 
+	}
+	
+	@Override
+	public String toStringDuringBattle() {
+		return "Charizard,";
 	}
 }

@@ -1,8 +1,14 @@
 
 public class Blastoise extends Pokemon {
 	
+	Blastoise() {
+		super("water",120);
+		
+		// TODO Auto-generated constructor stub
+	}
+
 	String type = "water";
-	int hp = super.getHealthPoints();
+	int hp = getNewHP();
 	String waterGun = "Water Gun";
 	String hydroPump = "Hydro Pump";
 	boolean hasTypeAdvantage = false;
@@ -32,6 +38,11 @@ public class Blastoise extends Pokemon {
 	}
 	
 	public String toString() {
-		return "Blastoise has " + hp + " hp, and is of type "+ type; 
+		return "Blastoise, " + getNewHP() +" "+ type; 
+	}
+	
+	@Override
+	public String toStringDuringBattle() {
+		return "Blastoise,";
 	}
 }

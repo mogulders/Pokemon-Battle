@@ -1,8 +1,13 @@
 
 public class Venusaur extends Pokemon {
 	
+	Venusaur() {
+		super("leaf",120);
+		// TODO Auto-generated constructor stub
+	}
+
 	String type = "leaf";
-	int hp = super.getHealthPoints();
+	int hp = getNewHP();
 	String vineWhip = "Vine Whip";
 	String solarBeam = "Solar Beam";
 	int speed;
@@ -41,7 +46,12 @@ public class Venusaur extends Pokemon {
 	}
 	
 	public String toString() {
-		return "Venusaur has " + hp + " hp, and is of type "+ type; 
+		return "Venusaur, " + getNewHP() +" "+ type; 
+	}
+	
+	@Override
+	public String toStringDuringBattle() {
+		return "Venusaur,";
 	}
 	
 }
